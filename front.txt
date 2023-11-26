@@ -1,0 +1,28 @@
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+source ~/.bashrc
+nvm install v18.14.2
+nvm use 18.14.2
+#npm i -f
+yarn
+yarn dev --hostname 192.168.1.45
+
+
+
+sudo apt-get install -y ca-certificates curl gnupg
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor | sudo tee /etc/apt/keyrings/nodesource.gpg >/dev/null
+echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_16.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+sudo apt-get update
+sudo apt-get install -y nodejs
+yarn
+yarn dev --hostname 192.168.1.45
+
+
+
+
+
+conda create -n bgr python==3.10.4
+conda activate bgr
+pip install -r requirements.txt
+pip install fastapi uvicorn
+
