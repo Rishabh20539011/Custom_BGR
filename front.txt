@@ -1,3 +1,6 @@
+RUN apt-get update && apt-get install -y npm && npm install -g pm2
+
+
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 source ~/.bashrc
 nvm install v18.14.2
@@ -25,4 +28,22 @@ conda create -n bgr python==3.10.4
 conda activate bgr
 pip install -r requirements.txt
 pip install fastapi uvicorn
+
+
+# Navigate to the directory containing setup.py
+cd path/to/your/package
+
+# Create the source distribution
+python setup.py sdist
+
+# Create the wheel distribution
+python setup.py bdist_wheel
+
+pip install twine
+
+twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+
+twine upload dist/*
+
+
 
