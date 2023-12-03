@@ -32,9 +32,13 @@ class U2NETCustom(U2NETArch):
 
     def preprocess_img(self,image):
         # Resizing
-        image = cv2.resize(image, (self.input_image_size, self.input_image_size), cv2.INTER_AREA)
+        print('error here----1111111111-----------------',self.input_image_size)
+        image = cv2.resize(image, (int(self.input_image_size), int(self.input_image_size)), cv2.INTER_AREA)
+        print('error here----222222222222-----------------')
         # Transposing
+        print('image shape----',image.shape)
         image = image.transpose(2,0,1)
+        
         return image
 
     @staticmethod
@@ -45,9 +49,16 @@ class U2NETCustom(U2NETArch):
 
     def __call__(self,actual_image):
         
+        print('image shape----initial ',actual_image.shape)
+
         image = self.preprocess_img(actual_image)
         # Adding one more dimesion in front
+        print('error here----3333333333333-----------------')
+
         image = torch.unsqueeze(torch.tensor(image), 0).to(self._device)
+
+        print('error here----444444444444444-----------------')
+
         result=super(U2NETCustom, self).forward(image)
         print('predict custom---',result.shape)
 

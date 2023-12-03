@@ -45,7 +45,17 @@ def process_image(image_data,interface):
     image_data = image_data.split(",")[-1]
 
     image_bytes = base64.b64decode(image_data)
+
     image = cv2.imdecode(np.frombuffer(image_bytes, np.uint8), -1)
+
+    print('initial shape-----',image.shape)
+
+    # Check the number of channels in the image
+    num_channels = image.shape[2] if len(image.shape) == 3 else 1
+
+    # If the image has only one channel, convert it to 3 channels
+    if num_channels == 1:
+        image = cv2.cvtColor(image, cv2.COLOR_GRAY2BGR)
 
     print('properties of image-----',image.shape)
     # Your processing logic here
@@ -53,11 +63,11 @@ def process_image(image_data,interface):
 
     result_image=interface(image)
 
-    cv2.imwrite('result_image_new.png',result_image)
     print('properties of image-----',result_image.shape)
 
     # Encode the result image as base64
     _, buffer = cv2.imencode('.png', result_image)
+
     result_image_base64 = base64.b64encode(buffer).decode('utf-8')
 
     return result_image_base64

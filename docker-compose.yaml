@@ -1,26 +1,25 @@
-version: '3'
+version: '3.8'
 
 services:
-  backend:
+  bgr_frontend:
     build:
-      context: ./path/to/backend
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "3000:3000"
+    networks:
+      - bgr_network
+
+  bgr_backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
     ports:
       - "8000:8000"
     networks:
-      - app-network
-    container_name: backend-container
-
-  frontend:
-    build:
-      context: ./path/to/frontend
-    ports:
-      - "3000:3000"
-    depends_on:
-      - backend
-    networks:
-      - app-network
-    container_name: frontend-container
+      - bgr_network
 
 networks:
-  app-network:
+  bgr_network:
     driver: bridge
+

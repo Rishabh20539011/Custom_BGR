@@ -14,11 +14,10 @@ class InterfaceMain():
 
         mask = mask.astype(np.uint8)
 
-        print('mask-----',mask)
+        print('mask-----',mask.shape)
 
         mask = cv2.resize(mask, (image.shape[1], image.shape[0]))
 
-        print('error---')
         # Create an empty alpha channel
         alpha = np.ones_like(mask, dtype=image.dtype) * 255
 
@@ -29,7 +28,5 @@ class InterfaceMain():
         image_with_alpha = cv2.merge((image, alpha))
 
         print('analysis done')
-
-        cv2.imwrite('result.png',image_with_alpha)
         
         return image_with_alpha

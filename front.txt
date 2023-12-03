@@ -21,6 +21,11 @@ yarn
 yarn dev --hostname 192.168.1.45
 
 
+yarn
+yarn build
+npm i -g serve
+serve -s out
+
 
 
 
@@ -46,4 +51,19 @@ twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 twine upload dist/*
 
 
+docker exec -it 93d4d5b6ba7c bash
+docker rmi f59900ade907 c7d2965fc948
+docker rm -f f080087b11f1
 
+
+docker run -d -p 3000:3000 bgr_frontend
+docker build -f Dockerfile.frontend -t bgr_frontend
+
+
+docker run --network host -d -p 192.168.1.47:8000:8000 bgr_backend
+docker build -f Dockerfile.backend -t bgr_backend .
+
+
+docker-compose up -d --build
+
+docker-compose down
