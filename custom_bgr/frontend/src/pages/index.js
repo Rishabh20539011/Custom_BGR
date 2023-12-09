@@ -1,31 +1,12 @@
+// Import necessary React components and libraries
+
 import { useState } from "react";
 import styled from "@emotion/styled";
 import { Input } from "@material-ui/core";
-import { io } from "socket.io-client";
 import axios from "axios";
 import styles from "../styles/Root.module.css";
 
-const socket = io.connect('http://localhost:8000');
-
-
-socket.on("connect", function() {
-  console.log("Connected to server");
-});
-
-
-socket.on("image", function(data) {
-  // Code to display the image using the base64 string in data.image
-  document.getElementById("imageElementId").src = "data:image/png;base64," + data.image;
-});
-
-
-
-
-socket.on('receive_image', (data) => {
-  // const imageElement = document.getElementById('imageDisplay');
-  // imageElement.src = `data:image/png;base64,${data.image}`;
-  setResponseImage(data.image)
-});
+// Styled components for styling the UI elements
 
 const Container = styled.div`
   align-items: center; /* Center items vertically */
@@ -111,6 +92,8 @@ const Button = styled.button`
   }
 `;
 
+// React functional component for the Dropdown page
+
 function Dropdown() {
   // const [segmentationModel, setSegmentationModel] = useState(null);
   const [reqBody,setReqBody]=useState({
@@ -147,12 +130,15 @@ function Dropdown() {
   //   }
   // };
 
+
+  // Function to get results from the backend
+
   const getResult=async ()=>{
     setLoader(true);
     try{
       const res = await axios.post(process.env.NEXT_PUBLIC_URL, {
-        data: reqBody,
-        image: selectedImage,
+          data: reqBody,
+          image: selectedImage,
       });
       setResponseImage(res.data.image);
     }catch(e){
@@ -161,12 +147,15 @@ function Dropdown() {
     setLoader(false)
   }
 
+  // Function to handle file change (image selection)
+
   const handleFileChange = async (event) => {
     const file = event.target.files[0];
     try {
       if (file) {
         const reader = new FileReader();
-        reader.readAsDataURL(event.target.files[0])
+        reader.readAsDataURL(file)
+        console.log("file:",file)
         reader.onload = (e) => {
           // const imgElement = document.createElement("img");
           // imgElement.src = e.target.result;
@@ -202,10 +191,6 @@ function Dropdown() {
         setSelectedImage(null);
       }
 
-    // const res = await axios.post("http://localhost:8881/process", {
-    //   data: reqBody,
-    //   image: selectedImage,
-    // });
   } catch (error) {
     if (error.response) {
       console.log('Data:', error.response.data);
@@ -219,6 +204,7 @@ function Dropdown() {
   }
 };
 
+  // JSX structure defining the UI components
 
   return (
     <Container>
@@ -321,8 +307,12 @@ function Dropdown() {
   );
 }
 
+// Loader component for displaying loading indicator
+
 export const Loader=({height})=>{
   return <div className={styles.loaderContainer}><div style={height && {height,width:height}} className={styles.loader}/></div>
 }
+
+// Export the Dropdown component as the default export
 
 export default Dropdown;

@@ -1,3 +1,7 @@
+
+NEXT_PUBLIC_URL=http://backend-service:8000/process
+
+
 RUN apt-get update && apt-get install -y npm && npm install -g pm2
 
 
@@ -67,3 +71,41 @@ docker build -f Dockerfile.backend -t bgr_backend .
 docker-compose up -d --build
 
 docker-compose down
+
+
+docker tag custom_bgr_app-bgr_backend:latest rishabh20539011/custom_bgr:backend
+docker push rishabh20539011/custom_bgr:backend
+
+
+
+minikube start
+
+kubectl apply -f /home/rishabh/Desktop/custom_bgr_main/Custom_BGR_APP/frontend_deployment.yaml
+kubectl apply -f /home/rishabh/Desktop/custom_bgr_main/Custom_BGR_APP/frontend_services.yaml
+#same for backend
+
+minikube service frontend-service
+
+kubectl get services
+
+kubectl get deployments
+
+kubectl describe pod <pod-name>
+
+create -f , get pod --watch, kubectl events, get all
+
+kubectl logs my-pod -c my-container
+
+kubectl exec my-pod -- ls /
+
+kubectl exec -it my-pod -- /bin/bash
+
+kubectl exec [your-frontend-pod-name] -- printenv
+
+
+curl -X POST http://backend-service:8000/process -H "Content-Type: application/json" -d '{"key1":"value1", "key2":"value2"}'
+
+kubectl exec -it [frontend-pod-name] -- /bin/sh
+
+
+kubectl port-forward service/backend-service 8000:8000

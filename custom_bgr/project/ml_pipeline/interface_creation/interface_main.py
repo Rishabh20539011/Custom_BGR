@@ -2,20 +2,43 @@ import numpy as np
 import cv2
 
 class InterfaceMain():
+    """
+    Main Interface class for handling segmentation models.
 
-    def __init__(self,seg_model,device):
+    Attributes:
+    - seg_model: Segmentation model instance.
+    - device (str): Device on which the model is run ('cpu' or 'cuda').
+    """
 
-        self.seg_model=seg_model
-        self.device=device
+    def __init__(self, seg_model, device):
+        """
+        Initialize the InterfaceMain.
 
-    def __call__(self,image):
+        Args:
+        - seg_model: Segmentation model instance.
+        - device (str): Device on which the model is run ('cpu' or 'cuda').
+        """
+        self.seg_model = seg_model
+        self.device = device
 
-        mask=self.seg_model(image)
+    def __call__(self, image):
+        """
+        Perform segmentation on the input image and return the image with an alpha channel.
 
+        Args:
+        - image (numpy.ndarray): Input image for segmentation.
+
+        Returns:
+        - numpy.ndarray: Resultant image with an alpha channel.
+        """
+
+        # Perform segmentation using the provided model
+        mask = self.seg_model(image)
+
+        # Convert the mask to uint8
         mask = mask.astype(np.uint8)
 
-        print('mask-----',mask.shape)
-
+        # Resize the mask to match the original image dimensions
         mask = cv2.resize(mask, (image.shape[1], image.shape[0]))
 
         # Create an empty alpha channel
@@ -27,6 +50,6 @@ class InterfaceMain():
         # Add the alpha channel to the image
         image_with_alpha = cv2.merge((image, alpha))
 
-        print('analysis done')
-        
+        print('Analysis done.')
+
         return image_with_alpha

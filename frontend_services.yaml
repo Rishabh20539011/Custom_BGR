@@ -1,0 +1,15 @@
+# Define a Kubernetes Service for the frontend application
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service # Name of the Service
+spec:
+  selector:
+    app: bgr-frontend # Label selector for identifying pods to be exposed by the service
+  ports:
+    - protocol: TCP
+      port: 80 # Port on the Service
+      targetPort: 3000 # Port on the pods
+  # Service type determines how the service is exposed outside the cluster
+  type: NodePort # if you are running locally
+  # type: LoadBalancer # If you are running on cloud
