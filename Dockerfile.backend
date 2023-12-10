@@ -15,14 +15,19 @@ COPY requirements.txt .
 # 5. Install requirements
 RUN pip3 install --no-cache-dir -r requirements.txt
 
+# Create __init__.py in custom_bgr and project directories
+RUN mkdir -p ./custom_bgr/project
+COPY ./custom_bgr/__init__.py ./custom_bgr/__init__.py
+RUN touch ./custom_bgr/project/__init__.py
+
 # 6. Copy the custom_bgr/project folder into the working directory as custom_bgr_ml
-COPY ./custom_bgr/project ./custom_bgr_ml
+COPY ./custom_bgr/project ./custom_bgr/project
 
 # 7. Change to the custom_bgr_ml directory
-WORKDIR /app/custom_bgr_ml
+WORKDIR /app
 
 # 8. Run the download_models() command
-RUN python3 -c "from ml_pipeline.models.file_location import download_all; download_all();"
+RUN python3 -c "from custom_bgr.project.ml_pipeline.models.file_location import download_all; download_all();"
 
 # 9. Expose the port
 EXPOSE 8000

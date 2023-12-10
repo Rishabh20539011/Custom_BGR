@@ -3,7 +3,7 @@ from pydantic import BaseModel, Field
 import cv2
 import base64
 import numpy as np
-from ml_pipeline.interface_creation.interface import SegInterface
+from custom_bgr.project.ml_pipeline.interface_creation.interface import SegInterface
 from fastapi.middleware.cors import CORSMiddleware
 
 # Create a FastAPI instance

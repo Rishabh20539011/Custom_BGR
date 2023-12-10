@@ -1,7 +1,7 @@
 import warnings
-from ml_pipeline.wrapper.u2net_pretrained import U2NETPretrained
-from ml_pipeline.wrapper.u2net_custom import U2NETCustom
-from ml_pipeline.interface_creation.interface_main import InterfaceMain
+from custom_bgr.project.ml_pipeline.wrapper.u2net_pretrained import U2NETPretrained
+from custom_bgr.project.ml_pipeline.wrapper.u2net_custom import U2NETCustom
+from custom_bgr.project.ml_pipeline.interface_creation.interface_main import InterfaceMain
 from collections import defaultdict
 
 
