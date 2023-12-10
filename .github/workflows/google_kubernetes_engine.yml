@@ -1,0 +1,39 @@
+name: Deploy to GKE
+
+on:
+  workflow_run:
+    workflows: ["Push to Docker Hub"]
+    types:
+      - completed
+    branches:
+      - main
+      
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Cloud SDK
+      uses: google-github-actions/setup-gcloud@v1
+      with:
+        service_account_key: ${{ secrets.GKE_SA_KEY }}
+        project_id: your-gcp-project-id
+
+    - name: Configure Docker
+      run: |
+        docker login -u your-docker-hub-username -p ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+
+    - name: Pull Docker Image
+      run: |
+        docker pull your-docker-image
+
+    - name: Connect to GKE
+      run: |
+        gcloud container clusters get-credentials your-cluster-name --zone your-cluster-zone --project your-gcp-project-id
+
+    - name: Deploy to GKE
+      run: |
+        kubectl apply -f your-k8s-deployment-file.yaml
+        kubectl apply -f your-k8s-service-file.yaml
