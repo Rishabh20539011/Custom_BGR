@@ -43,10 +43,10 @@ pip install fastapi uvicorn
 cd path/to/your/package
 
 # Create the source distribution
-python setup.py sdist
+python setup.py sdist bdist_wheel
 
 # Create the wheel distribution
-python setup.py bdist_wheel
+# python setup.py bdist_wheel
 
 pip install twine
 
@@ -113,3 +113,8 @@ kubectl port-forward service/backend-service 8000:8000
 
 
 https://github.com/marketplace?type=actions
+
+
+
+
+pypi api---- pypi-AgEIcHlwaS5vcmcCJDQ5Y2U3MTIxLTk3ZmYtNDE3Ni1iYWNhLTJiMzk1M2YyNTMzMAACKlszLCIxYTBlMjg0ZS1mMjQ4LTQyZTMtYmFiMy1kZDYyNGY5OTViYzgiXQAABiAXNjog_vRKDmXg_oiGBGTcybL4_oo4z47eYTmosMDkVg
