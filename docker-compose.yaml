@@ -1,0 +1,28 @@
+# Docker compose file to handle containers 
+
+version: '3.8'
+
+services:
+  # Frontend service configuration
+  bgr_frontend:
+    build:
+      context: .  # Build context is the current directory
+      dockerfile: Dockerfile.frontend  # Dockerfile for building the frontend image
+    ports:
+      - "3000:3000"  # Map container port 3000 to host port 3000
+    networks:
+      - bgr_network  # Attach to the bgr_network
+
+  # Backend service configuration
+  bgr_backend:
+    build:
+      context: .  # Build context is the current directory
+      dockerfile: Dockerfile.backend  # Dockerfile for building the backend image
+    ports:
+      - "8000:8000"  # Map container port 8000 to host port 8000
+    networks:
+      - bgr_network  # Attach to the bgr_network
+
+networks:
+  bgr_network:
+    driver: bridge  # Use the bridge network driver for the bgr_network

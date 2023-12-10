@@ -1,0 +1,47 @@
+# Use the latest Ubuntu image as the base
+FROM ubuntu:latest
+
+# Set the working directory to /frontend
+WORKDIR /frontend
+
+# Copy the frontend source code to the container
+COPY ./custom_bgr/frontend ./custom_bgr_frontend
+
+# Copy the Supervisor configuration file to the appropriate location
+COPY supervisord_frontend.conf /etc/supervisor/conf.d/supervisord_frontend.conf
+
+# Update the package list and install necessary packages
+RUN apt-get update -y >/dev/null 2>&1
+RUN apt-get install -y ca-certificates curl gnupg supervisor
+
+# Create a directory for apt keyrings and download Node.js key
+RUN mkdir -p /etc/apt/keyrings
+RUN curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+
+# Add Node.js repository to the package sources
+RUN echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_16.x nodistro main" | tee /etc/apt/sources.list.d/nodesource.list
+
+# Update the package list again
+RUN apt update
+
+# Install Node.js and Yarn
+RUN apt -y install nodejs -y
+RUN npm i -g yarn serve >/dev/null 2>&1
+
+# Set the working directory to the frontend subdirectory
+WORKDIR /frontend/custom_bgr_frontend
+
+# Copy the example environment file
+COPY env.example .env
+
+# Install dependencies using Yarn
+RUN yarn
+
+# Build the frontend application
+RUN yarn build
+
+# Expose port 3000 for the application
+EXPOSE 3000
+
+# Start Supervisor with the specified configuration file
+CMD ["supervisord", "-c", "/etc/supervisor/conf.d/supervisord_frontend.conf"]

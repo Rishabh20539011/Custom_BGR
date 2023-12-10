@@ -1,0 +1,14 @@
+# Define a Kubernetes Service for the backend application
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service # Name of the Service
+spec:
+  selector:
+    app: bgr-backend # Label selector for identifying pods to be exposed by the service
+  ports:
+    - protocol: TCP
+      port: 8000 # Port on the Service
+      targetPort: 8000 # Port on the pods
+  # Service type determines how the service is exposed outside the cluster
+  type: ClusterIP # Change to NodePort or LoadBalancer if needed, Currently backend is only acessible internally

@@ -1,0 +1,31 @@
+# 1. Create base image
+FROM python:3.10.4
+
+# 2. Create working directory
+WORKDIR /app
+
+# 3. Install cv2 dependencies and supervisor
+RUN apt-get update -y >/dev/null 2>&1 \
+    && apt-get install -y libgl1 libglib2.0-0 supervisor
+
+# 4. Copy supervisor.conf file and requirements file to the app directory
+COPY supervisord_backend.conf /etc/supervisor/conf.d/supervisord_backend.conf
+COPY requirements.txt .
+
+# 5. Install requirements
+RUN pip3 install --no-cache-dir -r requirements.txt
+
+# 6. Copy the custom_bgr/project folder into the working directory as custom_bgr_ml
+COPY ./custom_bgr/project ./custom_bgr_ml
+
+# 7. Change to the custom_bgr_ml directory
+WORKDIR /app/custom_bgr_ml
+
+# 8. Run the download_models() command
+RUN python3 -c "from ml_pipeline.models.file_location import download_all; download_all();"
+
+# 9. Expose the port
+EXPOSE 8000
+
+# 10. Start Supervisor
+CMD ["supervisord", "-c", "/etc/supervisor/conf.d/supervisord_backend.conf"]

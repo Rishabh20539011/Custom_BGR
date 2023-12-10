@@ -1,0 +1,117 @@
+
+NEXT_PUBLIC_URL=http://backend-service:8000/process
+
+
+RUN apt-get update && apt-get install -y npm && npm install -g pm2
+
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+source ~/.bashrc
+nvm install v18.14.2
+nvm use 18.14.2
+#npm i -f
+yarn
+yarn dev --hostname 192.168.1.45
+
+
+
+sudo apt-get install -y ca-certificates curl gnupg
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor | sudo tee /etc/apt/keyrings/nodesource.gpg >/dev/null
+echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_16.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+sudo apt-get update
+sudo apt-get install -y nodejs
+yarn
+yarn dev --hostname 192.168.1.45
+
+
+yarn
+yarn build
+npm i -g serve
+serve -s out
+
+
+
+
+conda create -n bgr python==3.10.4
+conda activate bgr
+pip install -r requirements.txt
+pip install fastapi uvicorn
+
+
+# Navigate to the directory containing setup.py
+cd path/to/your/package
+
+# Create the source distribution
+python setup.py sdist bdist_wheel
+
+# Create the wheel distribution
+# python setup.py bdist_wheel
+
+pip install twine
+
+twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+
+twine upload dist/*
+
+
+docker exec -it 93d4d5b6ba7c bash
+docker rmi f59900ade907 c7d2965fc948
+docker rm -f f080087b11f1
+
+
+docker run -d -p 3000:3000 bgr_frontend
+docker build -f Dockerfile.frontend -t bgr_frontend
+
+
+docker run --network host -d -p 192.168.1.47:8000:8000 bgr_backend
+docker build -f Dockerfile.backend -t bgr_backend .
+
+
+docker-compose up -d --build
+
+docker-compose down
+
+
+docker tag custom_bgr_app-bgr_backend:latest rishabh20539011/custom_bgr:backend
+docker push rishabh20539011/custom_bgr:backend
+
+
+
+minikube start
+
+kubectl apply -f /home/rishabh/Desktop/custom_bgr_main/Custom_BGR_APP/frontend_deployment.yaml
+kubectl apply -f /home/rishabh/Desktop/custom_bgr_main/Custom_BGR_APP/frontend_services.yaml
+#same for backend
+
+minikube service frontend-service
+
+kubectl get services
+
+kubectl get deployments
+
+kubectl describe pod <pod-name>
+
+create -f , get pod --watch, kubectl events, get all
+
+kubectl logs my-pod -c my-container
+
+kubectl exec my-pod -- ls /
+
+kubectl exec -it my-pod -- /bin/bash
+
+kubectl exec [your-frontend-pod-name] -- printenv
+
+
+curl -X POST http://backend-service:8000/process -H "Content-Type: application/json" -d '{"key1":"value1", "key2":"value2"}'
+
+kubectl exec -it [frontend-pod-name] -- /bin/sh
+
+
+kubectl port-forward service/backend-service 8000:8000
+
+
+
+https://github.com/marketplace?type=actions
+
+
