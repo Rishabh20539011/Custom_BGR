@@ -1,8 +1,8 @@
 import numpy as np
 import torch
 import cv2
-from ml_pipeline.architecture.u2net_custom_arch import U2NETArch
-from ml_pipeline.models.file_location import u2net_full_custom
+from custom_bgr.project.ml_pipeline.architecture.u2net_custom_arch import U2NETArch
+from custom_bgr.project.ml_pipeline.models.file_location import u2net_full_custom
 
 class U2NETCustom(U2NETArch):
     """

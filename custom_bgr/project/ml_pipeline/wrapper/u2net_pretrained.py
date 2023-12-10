@@ -1,8 +1,8 @@
 import numpy as np
 import torch
 import cv2
-from ml_pipeline.architecture.u2net_pretrained_arch import U2NETArchitecture
-from ml_pipeline.models.file_location import u2net_full_pretrained
+from custom_bgr.project.ml_pipeline.architecture.u2net_pretrained_arch import U2NETArchitecture
+from custom_bgr.project.ml_pipeline.models.file_location import u2net_full_pretrained
 
 __all__ = ["U2NET"]
 
