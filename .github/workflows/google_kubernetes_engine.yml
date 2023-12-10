@@ -19,11 +19,11 @@ jobs:
       uses: google-github-actions/setup-gcloud@v1
       with:
         service_account_key: ${{ secrets.GKE_SA_KEY }}
-        project_id: your-gcp-project-id
+        project_id: ${{ secrets.PROJECT_ID }}
 
     - name: Configure Docker
       run: |
-        docker login -u your-docker-hub-username -p ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+        docker login -u rishabh20539011 -p ${{ secrets.DOCKER_HUB_PASS }}
 
     - name: Pull Docker Image
       run: |
@@ -31,9 +31,12 @@ jobs:
 
     - name: Connect to GKE
       run: |
-        gcloud container clusters get-credentials your-cluster-name --zone your-cluster-zone --project your-gcp-project-id
+        gcloud container clusters get-credentials ${{ secrets.CLUSTER_NAME }} --zone asia-south2 --project ${{ secrets.PROJECT_ID }}
 
     - name: Deploy to GKE
       run: |
-        kubectl apply -f your-k8s-deployment-file.yaml
-        kubectl apply -f your-k8s-service-file.yaml
+        kubectl apply -f backend_deployment.yaml
+        kubectl apply -f frontend_deployment.yaml
+        kubectl apply -f backend_services.yaml
+        kubectl apply -f frontend_services.yaml
+        
