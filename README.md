@@ -1,7 +1,7 @@
 # <p align="center"> Custom_BGR_APP 🖥️ </p> 
 
 ## 📄 Description:  
-This is a Custom designed Background removal APP with a Complete CI/CD flow and deployed on Google Kubernetes Engine (GKE). 🛠️🛠️
+🛠️🛠️ This is a Custom designed Background removal APP with a Complete CI/CD flow and deployed on Google Kubernetes Engine (GKE). 🛠️🛠️
 
 ## 📋 Features:  
 - This app incorporates two deep learning models. One is a pretrained model sourced from torchvision, and the other is trained on our custom dataset. Both adhere to the **Unet architecture**, with 
