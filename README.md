@@ -1,7 +1,7 @@
 # <p align="center"> Custom_BGR_APP 🖥️ </p> 
 
 ## 📄 Description:  
-Automated high-quality background removal framework for an image using neural networks.
+This is a Custom designed Background removal APP with a Complete CI/CD flow and deployed on Google Kubernetes Engine (GKE)
 
 
 
