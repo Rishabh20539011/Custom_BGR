@@ -4,15 +4,11 @@
 This is a Custom designed Background removal APP with a Complete CI/CD flow and deployed on Google Kubernetes Engine (GKE). 
 
 ## 📋 Features:  
-- Thre are two Deep learning models integrated to this app. One is Pretrained model taken from torchvision and Another is trained on our custom dataset. Both foollows the Unet Architecture but the 
-  design of architecture is a bit different.
-- Batch Processing
-- NVIDIA CUDA and CPU processing
-- FP16 inference: Fast inference with low memory usage
-- Easy inference
-- 100% remove.bg compatible FastAPI HTTP API 
-- Removes background from hairs
-- Easy integration with your code
+- This app incorporates two deep learning models. One is a pretrained model sourced from torchvision, and the other is trained on our custom dataset. Both adhere to the **Unet architecture**, with 
+ a slightly different designs. It's possible to update these models within our app.
+- The models can process on both**NVIDIA Cuda and CPU** but for now the model is deployed on CPU instance so the configuration files are prepared according to that.   
+- You have the flexibility to adjust the image size according to your preferences; simply choose the size that suits your download needs.
+- **Matting Model**, which enhances hairline accuracy in our models, is currently been disabled due to increased computation time and the necessity for a larger cloud instance.
 
 
 
