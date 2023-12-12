@@ -16,22 +16,23 @@
 
 | Application| Languages       |
 |------------|-----------------|
-| Frontend   | HTML            |
+| **Frontend**   | HTML            |
 |            | CSS             |
 |            | React           |
 |            |                 |
-| Backend    | Python          |
+| **Backend**    | Python          |
 |            | Pytorch         |
 |            | Fast api        |
 |            | Opencv          |
 |            |                 |
-| Testing    | Pytest          |
+| **Testing**    | Pytest          |
 |            |                 |
-| CI/CD      | Docker          |
+| **CI/CD**      | Docker          |
 |            | Kubernetes (minikube for local testing)|
 |            | Github Actions  |
 |            |                 |
-| Deployment |  Google Kubernets Engine (GKE) on GCP|
+| **Deployment** |  Google Kubernets Engine (GKE)|
+|            |   on Google cloud Platform    |
 
 
 
