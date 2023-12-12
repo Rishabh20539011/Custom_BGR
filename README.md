@@ -19,7 +19,7 @@
 | Frontend   | HTML            |
 |            | CSS             |
 |            | React           |
-|------------|-----------------|
+|            |                 |
 | Backend    | Python          |
 |            | Pytorch         |
 |            | Fast api        |
