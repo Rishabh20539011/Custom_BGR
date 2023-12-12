@@ -35,30 +35,6 @@
 |            |   on Google cloud Platform    |
 
 
-
-
-
-
-|        PARTS            |                   Languages                 | 
-|:-----------------------:|:-------------------------------------------:|
-| **Frontend**            |  HTML,CSS,React Components                  |
-|                         |     on Next Framework                       | 
-|:-----------------------:|:-------------------------------------------:|
-|         BASNet          |        **General** (people, objects)        | 
-|        DeepLabV3        |         People, Animals, Cars, etc          |  
-
-
-
-
-|        Networks         |                   Target                    |             Accuracy             |
-|:-----------------------:|:-------------------------------------------:|:--------------------------------:|
-| **Tracer-B7** (default) |     **General** (objects, animals, etc)     | **90%** (mean F1-Score, DUTS-TE) |
-|                         | **Hairs** (hairs, people, animals, objects) |  80.4% (mean F1-Score, DUTS-TE)  |
-|:-----------------------:|:-------------------------------------------:|:--------------------------------:|
-|         BASNet          |        **General** (people, objects)        |  80.3% (mean F1-Score, DUTS-TE)  |
-|        DeepLabV3        |         People, Animals, Cars, etc          |  67.4% (mean IoU, COCO val2017)  |
-
-
 > Here is the Demo of my Background removal app from my youtube channel, click to see 👇
 
 [![Custom_BGR_APP](https://img.youtube.com/vi/uAksgBFnGWY/0.jpg)](https://www.youtube.com/watch?v=uAksgBFnGWY) 
