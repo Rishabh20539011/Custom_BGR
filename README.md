@@ -21,7 +21,6 @@
 |            | React           |
 |            | (On Next Framework) |
 |            |                 |
-
 | **Backend**    | Python          |
 |            | Pytorch         |
 |            | Fast api        |
