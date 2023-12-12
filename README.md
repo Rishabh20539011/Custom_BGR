@@ -14,6 +14,30 @@
 
 ## 🔧Tools
 
+| Parts      | Languages       |
+|------------|-----------------|
+| Frontend   | HTML            |
+|            | CSS             |
+|            | React           |
+|------------|-----------------|
+| Backend    | Python          |
+|            | Pytorch         |
+|            | Fast api        |
+|------------|-----------------|
+| Devops     | Docker          |
+|            | Github actions  |
+
+
+
+|        PARTS            |                   Languages                 | 
+|:-----------------------:|:-------------------------------------------:|
+| **Frontend**            |  HTML,CSS,React Components                  |
+|                         |     on Next Framework                       | 
+|:-----------------------:|:-------------------------------------------:|
+|         BASNet          |        **General** (people, objects)        | 
+|        DeepLabV3        |         People, Animals, Cars, etc          |  
+
+
 
 
 |        Networks         |                   Target                    |             Accuracy             |
