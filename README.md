@@ -14,7 +14,7 @@
 
 ## 🔧Tools
 
-| Parts      | Languages       |
+| Application| Languages       |
 |------------|-----------------|
 | Frontend   | HTML            |
 |            | CSS             |
@@ -23,9 +23,18 @@
 | Backend    | Python          |
 |            | Pytorch         |
 |            | Fast api        |
-|------------|-----------------|
-| Devops     | Docker          |
-|            | Github actions  |
+|            | Opencv          |
+|            |                 |
+| Testing    | Pytest          |
+|            |                 |
+| CI/CD      | Docker          |
+|            | Kubernetes (minikube for local testing)|
+|            | Github Actions  |
+|            |                 |
+| Deployment |  Google Kubernets Engine (GKE) on GCP|
+
+
+
 
 
 
