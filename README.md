@@ -19,7 +19,9 @@
 | **Frontend**   | HTML            |
 |            | CSS             |
 |            | React           |
+|            | (On Next Framework) |
 |            |                 |
+
 | **Backend**    | Python          |
 |            | Pytorch         |
 |            | Fast api        |
@@ -32,7 +34,7 @@
 |            | Github Actions  |
 |            |                 |
 | **Deployment** |  Google Kubernets Engine (GKE)|
-|            |   on Google cloud Platform    |
+|            |   (on Google cloud Platform)    |
 
 
 > Here is the Demo of my Background removal app from my youtube channel, click to see 👇
