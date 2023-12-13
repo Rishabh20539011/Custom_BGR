@@ -32,7 +32,7 @@ RUN npm i -g yarn serve >/dev/null 2>&1
 WORKDIR /frontend/custom_bgr_frontend
 
 # Copy the example environment file
-COPY env.example .env
+# COPY env.example .env # Not needed to run this docker on cloud as the url will directly be acessed through the env frontent_deployment.yaml
 
 # Install dependencies using Yarn
 RUN yarn

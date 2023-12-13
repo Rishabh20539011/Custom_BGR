@@ -19,5 +19,5 @@ spec:
         ports:
         - containerPort: 3000 # Port to expose on the container
         env:
-        - name: BACKEND_URL
-          value: "http://backend-service:8000"
+        - name: NEXT_PUBLIC_URL
+          value: "http://backend-service:8000/process"
