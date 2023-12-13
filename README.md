@@ -38,6 +38,6 @@
 |            |   (on Google cloud Platform)    |
 
 
-> Here is the Demo of this Background removal app from my youtube channel, click to see 👇
+> Here is the youtube link to showcase the demo of this Background removal app , click to see 👇
 
 [![Custom_BGR_APP](https://img.youtube.com/vi/uAksgBFnGWY/0.jpg)](https://www.youtube.com/watch?v=uAksgBFnGWY) 
