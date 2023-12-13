@@ -41,3 +41,13 @@
 > Here is the youtube link to showcase the demo of this Background removal app , click to see 👇
 
 [![Custom_BGR_APP](https://img.youtube.com/vi/uAksgBFnGWY/0.jpg)](https://www.youtube.com/watch?v=uAksgBFnGWY) 
+
+## Using Custom_BGR locally
+
+1. Clone the repository and checkout to the final_branch (due to a slight variance in the configuration of Kubernetes pods between the local environment and the cloud)
+
+```shell script
+git clone https://github.com/Rishabh20539011/Custom_BGR.git
+git checkout final_branch
+```
+
