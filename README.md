@@ -27,6 +27,7 @@
 |            | Opencv          |
 |            |                 |
 |**Process manager**| Supervisord                |
+|            |                 |
 | **Testing**    | Pytest          |
 |            |                 |
 | **CI/CD**      | Docker          |
