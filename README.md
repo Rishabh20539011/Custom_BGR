@@ -1,15 +1,15 @@
 # <p align="center"> Custom_BGR 🖥️ </p> 
 
 ## 📄 Description:  
-🛠️ This is a Custom designed Background removal APP with a Complete CI/CD flow and deployed on Google Kubernetes Engine (GKE).🛠️
+🛠️ This is a Custom designed Background removal APP to demonstrate the entire CI/CD flow and the deployment process of Deep Learning models on the Google Cloud Platform.🛠️
 
 ## 📋 Features:  
-- This app incorporates two deep learning models. One is a pretrained model sourced from torchvision, and the other is trained on our custom dataset. Both adhere to the **Unet architecture**, with 
- a slightly different designs. It's possible to update these models within our app.
-- The models can process on both**NVIDIA Cuda and CPU** but for now the model is deployed on CPU instance so the configuration files are prepared according to that.   
+- This app incorporates two deep learning models. One is a pre-trained model sourced from Torchvision, and the other is trained on our custom dataset. Both adhere to the **Unet architecture**, with 
+ a slightly different design. It's possible to update these models within our app.
+- The models can process on both **NVIDIA Cuda and CPU** but for now, the model is deployed on CPU instance so the configuration files are prepared according to that.   
 - You have the flexibility to **adjust the image size** according to your preferences; simply choose the size that suits your download needs.
 - **Matting Model**, which enhances hairline accuracy in our models, is currently been disabled due to increased computation time and the necessity for a larger cloud instance.
-- Backend server is running on **FastAPI** which faster and easier to integrate with python.
+- The backend server is running on **FastAPI** which is faster and easier to integrate with Python.
 - Frontend is created on **NextJS** framework with using **React, HTML and CSS Components**.
 
 ## 🔧Tools
@@ -34,10 +34,10 @@
 |            | Kubernetes (minikube for local testing)|
 |            | Github Actions  |
 |            |                 |
-| **Deployment** |  Google Kubernets Engine (GKE)|
-|            |   (on Google cloud Platform)    |
+| **Deployment** |  Google Kubernetes Engine (GKE)|
+|            |   (on Google Cloud Platform)    |
 
->Here is the YouTube link featuring the demonstration of the Background Removal app. Click below to watch 👇. (Please note that the live instance of the project on Google cloud platform is currently inactive due to its billing cycle, so direct access through a link is unavailable.)
+>Here is the YouTube link featuring the demonstration of the Background Removal app. Click below to watch 👇. (Please note that the live instance of the project on the Google cloud platform is currently inactive due to its billing cycle, so direct access through a link is unavailable.)
 
 [![Custom_BGR_APP](https://img.youtube.com/vi/uAksgBFnGWY/0.jpg)](https://www.youtube.com/watch?v=uAksgBFnGWY) 
 
@@ -50,15 +50,15 @@ git clone https://github.com/Rishabh20539011/Custom_BGR.git
 git checkout final_branch
 ```
 2. Install [**Docker**](https://docs.docker.com/engine/install/) and [**Kubernetes**](https://minikube.sigs.k8s.io/docs/start/), if not available in your system
-   Note-- I have used minikube to configure kubernetes in my system , you can install either directly from docker or through other setup.
+   Note-- I have used Minikube to configure Kubernetes in my system, you can install it either directly from docker or through other setups.
 
-3. Start minkube to setup kubectl, so that we can acess inside pods
+3. Start Minkube to setup Kubectl, so that we can access inside pods
 
 ```
 minikube start
 ```
 
-4. Create deployments through our configuration files which will fetch the required docker images from Dockerhub (rishabh20539011/custom_bgr) , and these images encompass all the dependencies and setup requirements.
+4. Create deployments through our configuration files which will fetch the required docker images from Dockerhub (rishabh20539011/custom_bgr), and these images encompass all the dependencies and setup requirements.
 
 ```
 kubectl apply -f /path/to/your/backend_deployment.yaml
@@ -67,7 +67,7 @@ kubectl apply -f /path/to/your/frontend_deployment.yaml
 
 ```
 
-5. Create serices through our configuration files which will create a seperate network, excess necessary ports and setup communication between frontend and backend
+5. Create services through our configuration files which will create a separate network, excess necessary ports, and setup communication between the frontend and backend
 
 ```
 kubectl apply -f /home/rishabh/Desktop/custom_bgr_main/Custom_BGR_APP/frontend_services.yaml
@@ -76,12 +76,13 @@ kubectl apply -f /home/rishabh/Desktop/custom_bgr_main/Custom_BGR_APP/backend_se
 
 ```
 
-6. Start the application by getting direct link through our pod
+6. Start the application by getting a direct link through the frontend pod
 
 ```
 minikube service frontend-service
 
 ```
+
 
 
 
