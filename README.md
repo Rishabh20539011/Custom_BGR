@@ -39,6 +39,7 @@
 
 
 > Here is the youtube link to showcase the demo of this Background removal app , click to see 👇
+> (Currently the live instance of this project has been stopped due to it's billing cycle so you can't acess it directly) 
 
 [![Custom_BGR_APP](https://img.youtube.com/vi/uAksgBFnGWY/0.jpg)](https://www.youtube.com/watch?v=uAksgBFnGWY) 
 
