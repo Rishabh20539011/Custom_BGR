@@ -1,4 +1,4 @@
-# <p align="center"> Custom_BGR_APP 🖥️ </p> 
+# <p align="center"> Custom_BGR 🖥️ </p> 
 
 ## 📄 Description:  
 🛠️ This is a Custom designed Background removal APP with a Complete CI/CD flow and deployed on Google Kubernetes Engine (GKE).🛠️
