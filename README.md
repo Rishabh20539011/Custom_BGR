@@ -52,4 +52,23 @@ git checkout final_branch
 2. Install [**Docker**](https://docs.docker.com/engine/install/) and [**Kubernetes**](https://minikube.sigs.k8s.io/docs/start/), if not available in your system
    Note-- I have used minikube to configure kubernetes in my system , you can install either directly from docker or through other setup.
 
-    
+3. Start minkube to setup kubectl, so that we can acess inside pods
+
+```
+minikube start
+```
+
+4. Create deployments through our configuration files which will fetch the required docker images from Dockerhub (rishabh20539011/custom_bgr) , and these images encompass all the dependencies and setup requirements.
+
+```
+kubectl apply -f /home/rishabh/Desktop/custom_bgr_main/Custom_BGR_APP/backend_deployment.yaml
+
+kubectl apply -f /home/rishabh/Desktop/custom_bgr_main/Custom_BGR_APP/frontend_deployment.yaml
+
+```
+
+
+
+
+
+ 
