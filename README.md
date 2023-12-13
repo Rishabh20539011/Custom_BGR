@@ -61,11 +61,30 @@ minikube start
 4. Create deployments through our configuration files which will fetch the required docker images from Dockerhub (rishabh20539011/custom_bgr) , and these images encompass all the dependencies and setup requirements.
 
 ```
-kubectl apply -f /home/rishabh/Desktop/custom_bgr_main/Custom_BGR_APP/backend_deployment.yaml
+kubectl apply -f /path/to/your/backend_deployment.yaml
 
-kubectl apply -f /home/rishabh/Desktop/custom_bgr_main/Custom_BGR_APP/frontend_deployment.yaml
+kubectl apply -f /path/to/your/frontend_deployment.yaml
 
 ```
+
+5. Create serices through our configuration files which will create a seperate network, excess necessary ports and setup communication between frontend and backend
+
+```
+kubectl apply -f /home/rishabh/Desktop/custom_bgr_main/Custom_BGR_APP/frontend_services.yaml
+
+kubectl apply -f /home/rishabh/Desktop/custom_bgr_main/Custom_BGR_APP/backend_services.yaml
+
+```
+
+6. Start the application by getting direct link through our pod
+
+```
+minikube service frontend-service
+
+```
+
+
+
 
 
 
