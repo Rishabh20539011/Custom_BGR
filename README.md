@@ -37,9 +37,7 @@
 | **Deployment** |  Google Kubernets Engine (GKE)|
 |            |   (on Google cloud Platform)    |
 
-
-> Here is the youtube link to showcase the demo of this Background removal app , click to see 👇
-> (Currently the live instance of this project has been stopped due to it's billing cycle so you can't acess it directly) 
+>Here is the YouTube link featuring the demonstration of the Background Removal app. Click below to watch 👇. (Please note that the live instance of the project on Google cloud platform is currently inactive due to its billing cycle, so direct access through a link is unavailable.)
 
 [![Custom_BGR_APP](https://img.youtube.com/vi/uAksgBFnGWY/0.jpg)](https://www.youtube.com/watch?v=uAksgBFnGWY) 
 
