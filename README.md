@@ -83,13 +83,13 @@ minikube service frontend-service
 
 ```
  
- **Note**--------- if you want to run this app directly through docker without setting up kubernetes than you acess docker compose file:
+ **Note**--------- If you want to run this app directly through docker without setting up Kubernetes than you can access docker-compose file:
  
  ```
  cd path/to/your/docker-compose-yaml
  docker-compose up -d --build
  ```
- Then Acess the application on --- http://localhost:3000
+ Then access the application on --- http://localhost:3000
 
 
 
