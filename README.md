@@ -91,7 +91,15 @@ minikube service frontend-service
  ```
  Then access the application on --- http://localhost:3000
 
+## 🗒 Note:
 
+The target to improve this app in future versions are:- 
+
+* Incorporating training scripts into our UI for the automated training of a custom model through CI/CD.
+* Integrating Matting models to enhance the clarity of boundaries in our segmented images.
+* Introducing additional variables to provide more control over our results.
+* Implementing multi-factor authentication in our app.
+* Developing a dynamic user interface
 
 
 
