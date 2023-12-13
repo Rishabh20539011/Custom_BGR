@@ -50,4 +50,7 @@
 git clone https://github.com/Rishabh20539011/Custom_BGR.git
 git checkout final_branch
 ```
+2. Install [**Docker**](https://docs.docker.com/engine/install/) and [**Kubernetes**](https://minikube.sigs.k8s.io/docs/start/), if not available in your system
+   Note-- I have used minikube to configure kubernetes in my system , you can install either directly from docker or through other setup.
 
+    
